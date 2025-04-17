@@ -56,8 +56,8 @@ export const OperatorsList = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <p className="text-xl text-center text-transparent bg-gradient-to-r from-[#00F5FF] via-[#7A00FF] via-[#FF00A8] to-[#00FFC6] bg-clip-text">
-        I did not copy the design exactly, I made some adjustments to enhance the user experience.
+      <p className="text-center text-transparent bg-gradient-to-r from-[#00F5FF] via-[#7A00FF] via-[#FF00A8] to-[#00FFC6] bg-clip-text">
+        I did not copy paste the design exactly, I made some adjustments to enhance the user experience.
       </p>
 
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
