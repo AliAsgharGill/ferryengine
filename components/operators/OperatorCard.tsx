@@ -96,7 +96,7 @@ export const OperatorCard = ({
           
           <p className="text-gray-600 text-sm mb-4 line-clamp-2">{description}</p>
           
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col md:flex-row items-center justify-between">
             <Button variant="link" className="text-[#00b6d6] hover:text-[#008ca3] p-0 h-auto font-normal">
               More about {name}
             </Button>

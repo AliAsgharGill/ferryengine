@@ -1,6 +1,7 @@
 "use client";
 
 import { Phone, Mail, HelpCircle } from 'lucide-react';
+import Image from 'next/image';
 
 export const CustomerSupport = () => {
   return (
@@ -9,15 +10,17 @@ export const CustomerSupport = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">Customer Support</h2>
           <p className="text-gray-600">
-            Don't hesitate to contact us! We offer an awesome service rated ⭐⭐⭐⭐⭐ by our customers
+            Don&apos;t hesitate to contact us! We offer an awesome service rated ⭐⭐⭐⭐⭐ by our customers
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="order-2 md:order-1">
-            <img
-              src="/images/customer-support.svg"
+            <Image
+              src="/images/customer-support.png"
               alt="Customer Support"
+              width={500}
+              height={500}
               className="w-full max-w-md mx-auto"
             />
           </div>

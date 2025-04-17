@@ -151,7 +151,7 @@ export const OperatorsList = () => {
               />
               <Search className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
             </div>
-            <div className="flex gap-4">
+            <div className="flex flex-col md:flex-row gap-4">
               <div className="relative">
                 <select
                   className="h-10 px-4 pr-8 border rounded-md text-gray-900 focus:ring-[#00b6d6] focus:border-[#00b6d6] appearance-none"
