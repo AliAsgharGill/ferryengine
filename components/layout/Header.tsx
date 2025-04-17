@@ -12,20 +12,20 @@ export const Header = () => {
 
   return (
     <header className="bg-[#00b6d6] text-white">
-      <div className="w-full bg-white border-b border-white/20 text-[#00b6d6] hidden md:block">
+      <div className="w-full bg-white border-b border-white/20 text-black hidden md:block">
         <div className="container mx-auto px-4 py-2 flex justify-between items-center text-sm">
           <div className="flex items-center gap-2">
             <Phone size={16} color="#00b6d6" />
-            <span>+30 212 000 3000</span>
-            <span className="text-[#00b6d6]/70">Available hours in France: 07:00 to 22:00</span>
+            <span className='text-[#00b6d6]'>+30 212 000 3000</span>
+            <span className="text-black/70">Available hours in France: 07:00 to 22:00</span>
           </div>
           <div className="flex items-center gap-4">
             <button className="flex items-center gap-1">
-              <Globe size={16} color="#00b6d6" />
+              <Image src={'/images/flags/usa.png'} width={16} height={16} alt="USA Flag" className="" />
               <span>English</span>
             </button>
             <span>€ Euro</span>
-            <Button variant="ghost" className="text-[#00b6d6] hover:text-[#00b6d6]/80">
+            <Button variant="ghost" className="text-black hover:text-[#00b6d6]/80">
               Login • Manage bookings
             </Button>
           </div>
@@ -36,9 +36,16 @@ export const Header = () => {
       <div className="container mx-auto px-4">
         <nav className="py-4 flex justify-between items-center">
           <Link href="/" className="flex items-center gap-2">
-            <span className="text-4xl font-bold">ferryengine</span>
-            <Image src="/images/logo.png" alt="Logo" width={50} height={50} />
+            <span className="text-xl md:text-4xl font-bold">ferryengine</span>
+            <Image
+              src="/images/logo.png"
+              alt="Logo"
+              width={40}
+              height={40}
+              className="w-8 h-8 md:w-[50px] md:h-[50px]"
+            />
           </Link>
+
 
           <div className="hidden md:flex items-center gap-6">
             <Link href="/destinations" className="hover:text-white/80">Destinations</Link>

@@ -14,7 +14,7 @@ export const CustomerSupport = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-center ">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-center  ">
           <div className="order-2 md:order-1">
             <Image
               src="/images/customer-support.png"
