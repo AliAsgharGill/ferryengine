@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Operator } from '@/types/operators';
 
-interface OperatorCardProps extends Operator {}
+interface OperatorCardProps extends Operator { }
 
 export const OperatorCard = ({
   name,
@@ -22,8 +22,9 @@ export const OperatorCard = ({
   return (
     <div className="bg-white rounded-lg shadow-sm border border-gray-100 p-6">
       <div className="flex flex-col md:flex-row gap-6">
-        <div className="w-full md:w-1/4">
-          <div className="aspect-[2/1] relative">
+        <div className="w-full md:w-1/4 flex flex-col">
+          {/* Logo */}
+          <div className="aspect-[5/1] relative mb-2">
             <Image
               src={logo}
               alt={name}
@@ -31,12 +32,56 @@ export const OperatorCard = ({
               className="object-contain"
             />
           </div>
+
+          {/* Details under logo */}
+          <div className="text-sm space-y-2">
+            <div>
+              <div className="font-medium text-gray-700">Operates in</div>
+              <div className="flex flex-wrap items-center gap-1">
+                {operatesIn.map((country) => (
+                  <span key={country.code} className="flex items-center gap-1">
+                    <Image
+                      src={country.flag}
+                      alt={country.name}
+                      className="w-4 h-4 rounded-sm"
+                      width={16}
+                      height={16}
+                    />
+                    <span className="text-gray-600">{country.name}</span>
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <div className="font-medium text-gray-700">Vessels number: {vesselCount}</div>
+            </div>
+
+            <div>
+              <div className="font-medium text-gray-700">Ferry types: {ferryTypes}</div>
+            </div>
+
+            <div>
+              <div className="font-medium text-gray-700">Popular vessels:</div>
+              <div className="text-[#00b6d6]">
+                {popularVessels.map((vessel, index) => (
+                  <span key={vessel}>
+                    <Link href={`/vessels/${vessel.toLowerCase().replace(/\s+/g, '-')}`} className="hover:underline">
+                      {vessel}
+                    </Link>
+                    {index < popularVessels.length - 1 && ', '}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
-        
+
         <div className="flex-1">
-          <div className="flex flex-col md:flex-row justify-between mb-4">
-            <h3 className="text-xl font-semibold text-gray-900 mb-2 md:mb-0">{name}</h3>
-            <div className="flex items-center gap-2">
+          {/* Title and rating */}
+          <div className="flex justify-between items-start mb-4">
+            <h3 className="text-xl font-semibold text-gray-900">{name}</h3>
+            <div className="flex flex-col items-end">
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
                   <Star
@@ -51,58 +96,22 @@ export const OperatorCard = ({
               </span>
             </div>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-            <div className="text-sm">
-              <div className="font-medium text-gray-700 mb-1">Operates in</div>
-              <div className="flex flex-wrap items-center gap-2">
-                {operatesIn.map((country) => (
-                  <span key={country.code} className="flex items-center gap-1">
-                    <img
-                      src={country.flag}
-                      alt={country.name}
-                      className="w-4 h-4 rounded-sm"
-                    />
-                    <span className="text-gray-600">{country.name}</span>
-                  </span>
-                ))}
-              </div>
-            </div>
-            
-            <div className="text-sm">
-              <div className="font-medium text-gray-700 mb-1">Vessels number</div>
-              <div className="text-gray-600">{vesselCount}</div>
-            </div>
-            
-            <div className="text-sm">
-              <div className="font-medium text-gray-700 mb-1">Ferry types</div>
-              <div className="text-gray-600">{ferryTypes}</div>
-            </div>
-          </div>
 
-          <div className="mb-4">
-            <div className="font-medium text-gray-700 mb-1 text-sm">Popular vessels:</div>
-            <div className="text-[#00b6d6] text-sm">
-              {popularVessels.map((vessel, index) => (
-                <span key={vessel}>
-                  <Link href={`/vessels/${vessel.toLowerCase().replace(/\s+/g, '-')}`} className="hover:underline">
-                    {vessel}
-                  </Link>
-                  {index < popularVessels.length - 1 && ', '}
-                </span>
-              ))}
-            </div>
-          </div>
-          
-          <p className="text-gray-600 text-sm mb-4 line-clamp-2">{description}</p>
-          
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <Button variant="link" className="text-[#00b6d6] hover:text-[#008ca3] p-0 h-auto font-normal">
+          {/* Description */}
+          <p className="text-gray-600 text-sm mb-6">{description}</p>
+
+          {/* Buttons */}
+          <div className="flex flex-col md:flex-row md:space-y-2 items-center justify-between">
+            <Button
+              variant="link"
+              className="text-[#00b6d6] hover:text-[#00b6d6] p-0 h-auto font-normal flex items-center space-y-2"
+            >
               More about {name}
+              <span className="ml-1">▶</span>
             </Button>
-            <Button 
-              variant="outline" 
-              className="text-[#00b6d6] border-[#00b6d6] hover:bg-[#00b6d6] hover:text-white transition-colors"
+            <Button
+              variant="default"
+              className="bg-[#00b6d6] text-white hover:text-white border[#00b6d6] hover:bg-[#00b6d6] transition-colors mt-2 mg:mt-0"
             >
               View routes & prices
             </Button>

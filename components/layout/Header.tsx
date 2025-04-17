@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Menu, Phone, Globe, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,8 +34,8 @@ export const Header = () => {
         {/* Main Navigation */}
         <nav className="py-4 flex justify-between items-center">
           <Link href="/" className="flex items-center gap-2">
-            <span className="text-2xl font-bold">ferryengine</span>
-            <div className="w-6 h-6 bg-yellow-400 transform rotate-12" />
+            <span className="text-4xl font-bold">ferryengine</span>
+            <Image src={"/images/logo.png"} alt="Logo" width={50} height={50} />
           </Link>
 
           {/* Desktop Navigation */}
@@ -48,7 +49,7 @@ export const Header = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button 
+          <button
             className="md:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >

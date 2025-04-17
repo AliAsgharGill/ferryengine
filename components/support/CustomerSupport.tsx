@@ -14,7 +14,7 @@ export const CustomerSupport = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-center ">
           <div className="order-2 md:order-1">
             <Image
               src="/images/customer-support.png"
@@ -29,6 +29,13 @@ export const CustomerSupport = () => {
             <div className="flex items-start gap-4">
               <div className="bg-[#00b6d6] p-3 rounded-full">
                 <Phone className="h-6 w-6 text-white" />
+                <Image
+                  src="/images/headphone.png"
+                  alt="Phone Icon"
+                  width={24}
+                  height={24}
+                  className="absolute top-0 left-0 opacity-0"
+                />
               </div>
               <div>
                 <h3 className="font-semibold mb-2">Toll Free Customer Care</h3>
