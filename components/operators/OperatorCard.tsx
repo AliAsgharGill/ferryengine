@@ -23,7 +23,6 @@ export const OperatorCard = ({
     <div className="bg-white rounded-lg shadow-sm border border-gray-100 p-6">
       <div className="flex flex-col md:flex-row gap-6">
         <div className="w-full md:w-1/4 flex flex-col">
-          {/* Logo */}
           <div className="aspect-[5/1] relative mb-2">
             <Image
               src={logo}
@@ -33,7 +32,6 @@ export const OperatorCard = ({
             />
           </div>
 
-          {/* Details under logo */}
           <div className="text-sm space-y-2">
             <div>
               <div className="font-medium text-gray-700">Operates in</div>
@@ -78,7 +76,6 @@ export const OperatorCard = ({
         </div>
 
         <div className="flex-1">
-          {/* Title and rating */}
           <div className="flex justify-between items-start mb-4">
             <h3 className="text-xl font-semibold text-gray-900">{name}</h3>
             <div className="flex flex-col items-end">
@@ -97,10 +94,8 @@ export const OperatorCard = ({
             </div>
           </div>
 
-          {/* Description */}
           <p className="text-gray-600 text-sm mb-6">{description}</p>
 
-          {/* Buttons */}
           <div className="flex flex-col md:flex-row md:space-y-2 items-center justify-between">
             <Button
               variant="link"
