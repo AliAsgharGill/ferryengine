@@ -15,17 +15,17 @@ export const CustomerSupport = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-center  ">
-          <div className="order-2 md:order-1">
+          <div className="order-2 md:order-1 flex justify-end">
             <Image
               src="/images/customer-support.png"
               alt="Customer Support"
               width={500}
               height={500}
-              className="w-full max-w-md mx-auto"
+              className="w-full max-w-md"
             />
           </div>
 
-          <div className="order-1 md:order-2 space-y-8">
+          <div className="order-1 md:order-2 space-y-8 md:ms-40">
             <div className="flex items-start gap-4">
               <div className="bg-[#00b6d6] p-3 rounded-full">
                 <Phone className="h-6 w-6 text-white" />
