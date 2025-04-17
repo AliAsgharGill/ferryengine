@@ -15,7 +15,13 @@ export const Header = () => {
       <div className="w-full bg-white border-b border-white/20 text-black hidden md:block">
         <div className="container mx-auto px-4 py-2 flex justify-between items-center text-sm">
           <div className="flex items-center gap-2">
-            <Phone size={16} color="#00b6d6" />
+            <Image
+              src="/images/headphone.png"
+              alt="Logo"
+              width={16}
+              height={16}
+              className="w-8 h-8 md:w-[16px] md:h-[16px]"
+            />
             <span className='text-[#00b6d6]'>+30 212 000 3000</span>
             <span className="text-black/70">Available hours in France: 07:00 to 22:00</span>
           </div>
@@ -42,7 +48,7 @@ export const Header = () => {
               alt="Logo"
               width={40}
               height={40}
-              className="w-8 h-8 md:w-[50px] md:h-[50px]"
+              className="w-8 h-8 md:w-[40px] md:h-[40px]"
             />
           </Link>
 
