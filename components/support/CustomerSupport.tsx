@@ -25,7 +25,7 @@ export const CustomerSupport = () => {
             />
           </div>
 
-          <div className="order-1 md:order-2 space-y-8 md:ms-40">
+          <div className="order-1 md:order-2 space-y-8 md:ms-32">
             <div className="flex items-start gap-4">
               <div className="bg-[#00b6d6] p-3 rounded-full">
                 <Phone className="h-6 w-6 text-white" />
