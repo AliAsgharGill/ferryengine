@@ -17,7 +17,7 @@ export const Footer = () => {
           </div>
 
           {/* Link Sections */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-[repeat(3,_minmax(0,_1fr))_1px_minmax(0,_1.5fr)] gap-10 flex-grow items-start">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-[repeat(3,_minmax(0,_1fr))_1px_minmax(0,_1.5fr)] gap-10 flex-grow items-start">
             {/* Company */}
             <div>
               <h3 className="font-semibold mb-3">Company</h3>
