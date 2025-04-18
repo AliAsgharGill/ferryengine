@@ -27,11 +27,12 @@ export const Header = () => {
           </div>
           <div className="flex items-center gap-4">
             <button className="flex items-center gap-1">
-              <Image src={'/images/flags/usa.png'} width={16} height={16} alt="USA Flag" className="" />
+              <Image src={'/images/flags/usa.png'} width={20} height={20} alt="USA Flag" className="" />
               <span>English</span>
             </button>
-            <span>€ Euro</span>
+            <span><span className='text-black text-xl'>€</span> Euro</span>
             <Button variant="ghost" className="text-black hover:text-[#00b6d6]/80">
+              <Image src={'/images/user.png'} width={20} height={20} alt="USA Flag" className="mr-1" />
               Login • Manage bookings
             </Button>
           </div>

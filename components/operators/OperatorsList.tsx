@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo } from 'react';
-import { Search, MapPin, ChevronDown, SlidersHorizontal } from 'lucide-react';
+import { Search, MapPin, ChevronDown, SlidersHorizontal, ChevronRight } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { OperatorCard } from './OperatorCard';
@@ -69,8 +69,9 @@ export const OperatorsList = () => {
         </div>
         <Button
           variant="default"
-          className="mt-4 md:mt-0 bg-[#00b6d6] hover:bg-[#008ca3] text-white px-6"
+          className="mt-4 md:mt-0 bg-[#00b6d6] hover:bg-[#008ca3] hover:border-4 hover:border-[#FFDC01] text-white px-6 flex items-center gap-2"
         >
+          <ChevronRight className="h-5 w-5 " />
           Book your tickets
         </Button>
       </div>
@@ -114,7 +115,7 @@ export const OperatorsList = () => {
             placeholder="Search by operator name"
             value={filters.searchTerm}
             onChange={(e) => setFilters({ ...filters, searchTerm: e.target.value })}
-            className="pl-10 min-w-[250px]"
+            className="pl-10 md:max-w-[100px] focus:md:max-w-full transition-all duration-300"
           />
           <Search className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
         </div>
