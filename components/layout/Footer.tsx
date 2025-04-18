@@ -9,7 +9,7 @@ export const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row justify-between">
           {/* Logo Section */}
-          <div className="mb-10 lg:mb-0">
+          <div className="mb-10 lg:mb-0 mr-4">
             <div className="flex items-center gap-2">
               <span className="text-3xl font-bold">ferryengine</span>
               <Image src="/images/logo.png" alt="Logo" width={28} height={28} />
