@@ -52,6 +52,19 @@ export const Header = () => {
               className="w-8 h-8 md:w-[40px] md:h-[40px]"
             />
           </Link>
+          <Link
+            href="/login"
+            className="block sm:hidden text-white hover:text-white/80 flex items-center gap-2 ml-auto mr-5"
+          >
+            <Image
+              src="/images/user.png"
+              width={20}
+              height={20}
+              alt="User Icon"
+              className="invert"
+            />
+          </Link>
+
 
 
           <div className="hidden md:flex items-center gap-6">
