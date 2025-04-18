@@ -20,19 +20,46 @@ export const OperatorCard = ({
   popularVessels,
 }: OperatorCardProps) => {
   return (
-    <div className="bg-white rounded-lg shadow-sm border border-gray-100 p-6">
-      <div className="flex flex-col md:flex-row gap-6">
-        <div className="w-full md:w-1/4 flex flex-col">
-          <div className="aspect-[5/1] relative mb-2">
+    <div className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
+      {/* Header with logo on left, name and rating on right */}
+      <div className="flex justify-between items-center px-4 py-3 border-b border-gray-100">
+        {/* Logo on the left */}
+        <div className="w-1/3">
+          <div className="h-16 relative">
             <Image
               src={logo}
               alt={name}
               fill
-              className="object-contain"
+              className="object-contain object-left"
             />
           </div>
-
-          <div className="text-sm space-y-2">
+        </div>
+        
+        {/* Name and ratings on the right */}
+        <div className="w-2/3 flex flex-col items-end">
+          <h3 className="text-xl font-bold text-gray-900 mb-1">{name}</h3>
+          <div className="flex items-center">
+            <div className="flex">
+              {[...Array(5)].map((_, i) => (
+                <Star
+                  key={i}
+                  size={16}
+                  className={i < Math.floor(rating) ? "fill-yellow-400 text-yellow-400" : "text-gray-300"}
+                />
+              ))}
+            </div>
+            <span className="text-sm text-gray-600 ml-2">
+              by {customerCount.toLocaleString()} customers
+            </span>
+          </div>
+        </div>
+      </div>
+      
+      {/* Main content */}
+      <div className="flex flex-col md:flex-row">
+        {/* Left column - details */}
+        <div className="w-full md:w-1/3 p-4">
+          <div className="text-sm space-y-3">
             <div>
               <div className="font-medium text-gray-700">Operates in</div>
               <div className="flex flex-wrap items-center gap-1">
@@ -53,10 +80,7 @@ export const OperatorCard = ({
 
             <div>
               <div className="font-medium text-gray-700">Vessels number: {vesselCount}</div>
-            </div>
-
-            <div>
-              <div className="font-medium text-gray-700">Ferry types: {ferryTypes}</div>
+              <div className="text-gray-600">Ferry types: {ferryTypes}</div>
             </div>
 
             <div>
@@ -75,43 +99,25 @@ export const OperatorCard = ({
           </div>
         </div>
 
-        <div className="flex-1">
-          <div className="flex justify-between items-start mb-4">
-            <h3 className="text-xl font-semibold text-gray-900">{name}</h3>
-            <div className="flex flex-col items-end">
-              <div className="flex">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    size={16}
-                    className={i < Math.floor(rating) ? "fill-yellow-400 text-yellow-400" : "text-gray-300"}
-                  />
-                ))}
-              </div>
-              <span className="text-sm text-gray-600">
-                by {customerCount.toLocaleString()} customers
-              </span>
-            </div>
-          </div>
-
-          <p className="text-gray-600 text-sm mb-6">{description}</p>
-
-          <div className="flex flex-col md:flex-row md:space-y-2 items-center justify-between">
-            <Button
-              variant="link"
-              className="text-[#00b6d6] hover:text-[#00b6d6] p-0 h-auto font-normal flex items-center space-y-2"
-            >
-              More about {name}
-              <span className="ml-1">▶</span>
-            </Button>
-            <Button
-              variant="default"
-              className="bg-[#00b6d6] text-white hover:text-white border[#00b6d6] hover:bg-[#00b6d6] transition-colors mt-2 mg:mt-0"
-            >
-              View routes & prices
-            </Button>
-          </div>
+        {/* Right column - description */}
+        <div className="flex-1 border-l border-gray-200 p-4">
+          <p className="text-gray-600 text-sm">{description}</p>
         </div>
+      </div>
+      
+      {/* Footer with "More about" button */}
+      <div className="border-t border-gray-100 p-2 flex justify-end">
+        <Button
+          variant="link"
+          className="text-[#00b6d6] hover:text-[#00b6d6] p-0 h-auto font-medium text-base flex items-center"
+        >
+          More about {name}
+          <div className="ml-1 bg-[#00b6d6] text-white rounded-full w-5 h-5 flex items-center justify-center">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 6l6 6-6 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </div>
+        </Button>
       </div>
     </div>
   );
