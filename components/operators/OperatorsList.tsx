@@ -1,5 +1,6 @@
 "use client";
 
+import Image from 'next/image';
 import { useState, useMemo } from 'react';
 import { Search, MapPin, ChevronDown, SlidersHorizontal, ChevronRight } from 'lucide-react';
 import { Input } from '@/components/ui/input';
@@ -121,8 +122,9 @@ export const OperatorsList = () => {
         </div>
 
         <div className="flex justify-center md:justify-end">
-          <Button variant="outline" className="whitespace-nowrap">
-            Live Map View
+          <Button variant="outline" className="whitespace-nowrap text-[#00b6d6] border-[#00b6d6] hover:bg-[#e0f7fb] flex items-center gap-2">
+          <Image src="/images/globe.png" alt="Map" width={20} height={20} className="h-5 w-5" />
+          Live Map View
           </Button>
         </div>
       </div>
